@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuckyIsland.API.Handlers", "LuckyIsland.API.Handlers\LuckyIsland.API.Handlers.csproj", "{3E7DD106-8270-4405-B558-A79D3A428B3C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{15FE3D83-3BCC-4C86-BF51-E08DAA5783B6} = {15FE3D83-3BCC-4C86-BF51-E08DAA5783B6}
+		{55A63BA7-615B-421D-90A4-E591C7AE47B6} = {55A63BA7-615B-421D-90A4-E591C7AE47B6}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuckyIsland.API.Contracts", "LuckyIsland.API.Contracts\LuckyIsland.API.Contracts.csproj", "{15FE3D83-3BCC-4C86-BF51-E08DAA5783B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuckyIsland.API.Data", "LuckyIsland.API.Data\LuckyIsland.API.Data.csproj", "{55A63BA7-615B-421D-90A4-E591C7AE47B6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E7DD106-8270-4405-B558-A79D3A428B3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E7DD106-8270-4405-B558-A79D3A428B3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E7DD106-8270-4405-B558-A79D3A428B3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E7DD106-8270-4405-B558-A79D3A428B3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15FE3D83-3BCC-4C86-BF51-E08DAA5783B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15FE3D83-3BCC-4C86-BF51-E08DAA5783B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15FE3D83-3BCC-4C86-BF51-E08DAA5783B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15FE3D83-3BCC-4C86-BF51-E08DAA5783B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55A63BA7-615B-421D-90A4-E591C7AE47B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55A63BA7-615B-421D-90A4-E591C7AE47B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55A63BA7-615B-421D-90A4-E591C7AE47B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55A63BA7-615B-421D-90A4-E591C7AE47B6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

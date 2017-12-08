@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DataSource" Class="DataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=sql6001.site4now.net;Persist Security Info=True;User ID=DB_A2CB54_11_admin" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DataSourceConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="" Member="DBSportTrees">
+    <Type Name="DBSportTree" Id="ID1">
+      <Column Name="LeagueId" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="LeagueName" Type="System.String" DbType="nvarchar(50)" CanBeNull="false" />
+      <Column Name="CountryCode" Type="System.String" DbType="char(3)" CanBeNull="false" />
+      <Column Name="CountryName" Type="System.String" DbType="nvarchar(50)" CanBeNull="false" />
+      <Column Name="SportId" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="ImageCode" Type="System.String" DbType="char(4)" CanBeNull="false" />
+      <Column Name="SportName" Type="System.String" DbType="nvarchar(50)" CanBeNull="false" />
+      <Column Name="EventCount" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="BetTypeGroupName" Type="System.String" DbType="nvarchar(50)" CanBeNull="false" />
+      <Column Name="BetTypeGroupId" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="BetTypeGroupOrdering" Type="System.Int32" DbType="int" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.webAPI_Client_GetSportsTree" Method="webAPI_Client_GetSportsTree">
+    <Parameter Name="LanguageCode" Parameter="languageCode" Type="System.String" DbType="Char(2)" />
+    <Parameter Name="Duration" Parameter="duration" Type="System.Int32" DbType="Int" />
+    <Parameter Name="BettingLineTemplateID" Parameter="bettingLineTemplateID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Day" Parameter="day" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Bias" Parameter="bias" Type="System.Int32" DbType="Int" />
+    <Parameter Name="BetTypeGroupTemplateId" Parameter="betTypeGroupTemplateId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.webAPI_Client_GetEventOdds" Method="webAPI_Client_GetEventOdds">
+    <Parameter Name="EventIds" Parameter="eventIds" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="LanguageCode" Parameter="languageCode" Type="System.String" DbType="Char(2)" />
+    <Parameter Name="BetTypeGroupIds" Parameter="betTypeGroupIds" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="BettingLineTemplateID" Parameter="bettingLineTemplateID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Type" Parameter="type" Type="System.Int32" DbType="Int" />
+    <ElementType Name="webAPI_Client_GetEventOddsResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EventId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BetTypeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OddTypeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BetGroupId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OddPoint" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TeamId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OddFactor" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="ColumnNumber" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="SportId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.webAPI_Client_GetEventInfo" Method="webAPI_Client_GetEventInfo">
+    <Parameter Name="LeagueIds" Parameter="leagueIds" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="EventIds" Parameter="eventIds" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="LanguageCode" Parameter="languageCode" Type="System.String" DbType="Char(2)" />
+    <Parameter Name="Day" Parameter="day" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Bias" Parameter="bias" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Duration" Parameter="duration" Type="System.Int32" DbType="Int" />
+    <Parameter Name="BettingLineTemplateID" Parameter="bettingLineTemplateID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="webAPI_Client_GetEventInfoResult">
+      <Column Name="SportId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SportName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CountryCode" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="CountryName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LeagueId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LeagueName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EventID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EventCode" Type="System.String" DbType="Char(4) NOT NULL" CanBeNull="false" />
+      <Column Name="EventType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EventName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="EventDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Interval" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HomeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HomeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GuestId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GuestName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>
